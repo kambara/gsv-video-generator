@@ -5,6 +5,8 @@ function init() {
   var hyperlapse = new Hyperlapse(document.getElementById('pano'), {
     width: 854,
     height: 480,
+    //width: 1280,
+    //height: 720,
     zoom: 1,
     use_lookat: false,
     millis: 100,
