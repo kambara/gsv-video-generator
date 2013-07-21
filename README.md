@@ -4,7 +4,7 @@
 
 Install the follwing packages.
 
-- Ruby (>= verion 1.9)
+- Ruby
 - ffmpeg
 - x264
 
@@ -16,8 +16,8 @@ Then, install gsv-video-generator and required libraries.
 
     $ git clone git@github.com:kambara/gsv-video-generator.git
     $ cd gsv-video-generator
-    $ gem install bundler   ## OR  $ sudo gem install bundler
-    $ bundle install
+    $ gem install bundler   ## OR $ sudo gem install bundler
+    $ bundle install   ## OR $ sudo bundle install
 
 ## Usage
 

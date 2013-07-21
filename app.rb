@@ -1,7 +1,8 @@
-require 'base64'
-require 'fileutils'
+require 'rubygems'
 require 'bundler'
 Bundler.require
+require 'base64'
+require 'fileutils'
 
 set :port, 3000
 
