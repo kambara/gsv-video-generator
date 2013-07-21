@@ -2,3 +2,6 @@ data
 video
 *.mp4
 .sass-cache
+.rbenv-version
+.ruby-version
+
