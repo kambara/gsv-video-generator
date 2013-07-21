@@ -19,8 +19,13 @@ Then, install gsv-video-generator and required libraries.
     $ gem install bundler   ## OR  $ sudo gem install bundler
     $ bundle install
 
-## Start the application server
+## Usage
 
+Start the application server.
+
+    $ cd gsv-video-generator
     $ ruby app.rb
 
-Open [http://localhost:3000/](http://localhost:3000/) in a web browser (Google Chrome is recommended).
+Open [http://localhost:3000/](http://localhost:3000/) in your web browser (Google Chrome is recommended).
+
+After specifying a start point (A) and a goal point (B), press the 'Generate' button.
