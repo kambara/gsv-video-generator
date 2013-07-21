@@ -15,6 +15,7 @@ If you use Homebrew on Mac OSX, you can install ffmpeg and x264 by the follwing 
 Then, install gsv-video-generator and required libraries.
 
     $ git clone git@github.com:kambara/gsv-video-generator.git
+    $ cd gsv-video-generator.git
     $ gem install bundler
     $ bundle install
 
