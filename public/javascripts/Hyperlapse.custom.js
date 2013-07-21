@@ -224,7 +224,7 @@ var Hyperlapse = function(container, params) {
     delete _h_points[_point_index];
 
     if(++_point_index != _h_points.length) {
-      handleLoadProgress( {position:_point_index} );
+      handleLoadProgress( {position:_point_index, length: _h_points.length} );
 
       if(!_cancel_load) {
 	_loader.composePanorama( _h_points[_point_index].pano_id );
@@ -331,7 +331,7 @@ var Hyperlapse = function(container, params) {
 
 	_h_points.push( hp );
 
-	handleRouteProgress( {point: hp} );
+	handleRouteProgress( {point: hp, index: _point_index, length: _raw_points.length + _h_points.length} );
 
 	if(_point_index == _raw_points.length-1) {
 	  handleRouteComplete( {response: response, points: _h_points} );
@@ -341,7 +341,6 @@ var Hyperlapse = function(container, params) {
 	  else handleLoadCanceled( {} );
 	}
       } else {
-
 	_raw_points.splice(_point_index, 1);
 
 	if(_point_index == _raw_points.length) {
@@ -499,25 +498,22 @@ var Hyperlapse = function(container, params) {
     }
   };
 
-  var animate = function() {
-    var ptime = _ctime;
-    _ctime = Date.now();
-    _dtime += _ctime - ptime;
-    if(_dtime >= self.millis) {
-      //if(_is_playing) loop();
-      drawMaterial();
-      render();
-
-      if(++_point_index == _h_points.length) {
-        console.log('Finish!');
-        return;
-      }
-      _dtime = 0;
-    }
-
-    requestAnimationFrame( animate );
-    
-  };
+  // var animate = function() {
+  //   var ptime = _ctime;
+  //   _ctime = Date.now();
+  //   _dtime += _ctime - ptime;
+  //   if(_dtime >= self.millis) {
+  //     //if(_is_playing) loop();
+  //     drawMaterial();
+  //     render();
+  //     if(++_point_index == _h_points.length) {
+  //       console.log('Finish!');
+  //       return;
+  //     }
+  //     _dtime = 0;
+  //   }
+  //   requestAnimationFrame( animate );
+  // };
 
   // animates the playhead forward or backward depending on direction
   // var loop = function() {
@@ -732,9 +728,7 @@ var Hyperlapse = function(container, params) {
       } else {
 	console.log("No route provided.");
       }
-
     }
-
   };
 
   /**

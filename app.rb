@@ -13,6 +13,10 @@ get "/css/application.css" do
   sass :application
 end
 
+post '/start' do
+  FileUtils.rm_rf('data')
+end
+
 post '/save' do
   FileUtils.mkdir_p('data')
   filename = "%08d.jpg"%params[:index]
@@ -22,5 +26,15 @@ post '/save' do
 end
 
 post '/finish' do
-  system 'mencoder "mf://data/*.jpg" -mf fps=30 -ovc x264 -o video.mp4'
+  FileUtils.mkdir_p('video')
+  system 'ffmpeg -i data/%08d.jpg -y -r 30 -f mp4 video/video.mp4'
+end
+
+get '/video' do
+  send_file 'video/video.mp4'
+end
+
+get '/download' do
+  content_type 'video/mp4'
+  send_file 'video/video.mp4', :disposition => :attachment
 end

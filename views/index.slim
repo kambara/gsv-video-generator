@@ -1,26 +1,28 @@
 h1 Street View Video Generator
-input#generate-button type="button" value="Generate"
-input#cancel-button type="button" value="Cancel"
-span#status
-div#pano
 
-div#map-canvas style="width:800px; height:600px"
-dl
-  dt Start:
-  dd
-    | (
-    span#start-lat
-    | ,
-    span#start-lng
-    | )
-dl
-  dt End:
-  dd
-    | (
-    span#end-lat
-    | ,
-    span#end-lng
-    | )
+.right
+  figure
+    div#pano-start
+    figcaption
+      .location
+        span#start-lat
+        | ,
+        span#start-lng
+      | A: Start
+  figure
+    div#pano-goal
+    figcaption
+      .location
+        span#goal-lat
+        | ,
+        span#goal-lng
+      | B: Goal
+.left
+  div#map-canvas
 
-div#start-pano style="width:300px; height:200px"
-div#end-pano style="width:300px; height:200px"
+.buttons
+  input#generate-button type="button" value="Generate"
+  input#cancel-button type="button" value="Cancel"
+
+#status
+#pano-rendering

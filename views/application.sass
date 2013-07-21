@@ -1,5 +1,65 @@
-dt, dd
-  display: inline-block
+$right-sidebar-width: 250px
 
-dd
-  margin-left: 1em
+body
+  background-color: #f5f5f5
+  margin: 0 0 100px 0
+  color: #333
+
+h1
+  margin: 20px 15px
+  font-size: 20px
+
+.right
+  float: right
+  width: $right-sidebar-width
+
+  #pano-start, #pano-goal
+    border: 1px solid #CCC
+    height: 200px
+    width: $right-sidebar-width
+
+  figure
+    margin: 0 0 20px 0
+
+    figcaption
+      font-size: 13px
+      font-weight: bold
+      margin: 3px 0
+  
+      .location
+        float: right
+        font-size: 10px
+        font-weight: normal
+        color: #CCC
+        margin-top: 3px
+        padding-right: 10px
+
+.left
+  margin-right: $right-sidebar-width + 10px
+
+  #map-canvas
+    border: 1px solid #CCC
+    height: 480px
+    width: 100%
+
+.buttons
+  margin: 10px
+
+  input[type=button]
+    background-color: white
+    border: 1px solid #666
+    border-radius: 3px
+    color: #444
+    cursor: pointer
+    padding: 6px 20px
+    font-size: 15px
+    margin-right: 10px
+    box-shadow: 0 2px 1px 0px rgba(0,0,0,0.2)
+
+    &:hover
+      background-color: #DDDDEE
+
+#status
+  color: #666
+  font-size: 12px
+  margin: 10px
