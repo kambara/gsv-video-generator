@@ -8,7 +8,7 @@ Install the follwing packages.
 - ffmpeg
 - x264
 
-If you use Homebrew on Mac OSX, you can install ffmpeg and x264 by the follwing command:
+If you use [Homebrew](http://mxcl.github.io/homebrew/) on Mac OSX, you can install ffmpeg and x264 by the follwing command:
 
     $ brew install ffmpeg x264
 
