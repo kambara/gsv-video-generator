@@ -18,7 +18,7 @@ Then, install gsv-video-generator and required libraries.
     $ gem install bundler
     $ bundle install
 
-## Start the server
+## Start the application server
 
     $ cd gsv-video-generator
     $ ruby app.rb
